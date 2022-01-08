@@ -1,5 +1,9 @@
 {
 	"image": "mcr.microsoft.com/vscode/devcontainers/python:3.7",
+	// "build": {
+	// 	"dockerfile": "Dockerfile",
+	// 	"context": ".."
+	// },
 
 	// Set *default* container specific settings.json values on container create.
 	"settings": { 
@@ -18,7 +22,8 @@
 	},
 	
 	"containerEnv": {
-		"POETRY_VERSION": "${localEnv:POETRY_VERSION}"
+		"POETRY_VERSION": "${localEnv:POETRY_VERSION}",
+		"POETRY_VIRTUALENVS_CREATE": "false"
 	},
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
