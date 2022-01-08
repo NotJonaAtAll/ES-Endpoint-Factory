@@ -23,8 +23,8 @@ class Config(dict):
         else:
             self.__populate(Config.__from_env())
 
-    def __populate(self, config: _Config):
-        for k, v in config.item():
+    def __populate(self, config: _Config) -> None:
+        for k, v in config.items():
             self[k] = v
 
     @staticmethod

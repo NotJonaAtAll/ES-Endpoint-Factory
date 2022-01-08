@@ -1,7 +1,8 @@
 from threading import Lock
 from typing import Dict, Type, TypeVar
-from config import Config
-from es_endpoint import ESEndpoint
+
+from es_endpoints_factory.config import Config
+from es_endpoints_factory.es_endpoint import ESEndpoint
 
 T_ESEndpoint = TypeVar("T_ESEndpoint", bound=ESEndpoint)
 
