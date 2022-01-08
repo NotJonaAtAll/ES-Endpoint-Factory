@@ -1,4 +1,4 @@
-from typing import Any, NoReturn, Union
+from typing import NoReturn, Union
 from typing_extensions import TypedDict
 from os import getenv
 
