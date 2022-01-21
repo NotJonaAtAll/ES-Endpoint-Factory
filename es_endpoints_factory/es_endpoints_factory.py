@@ -48,4 +48,3 @@ class ESEndpointsFactory:
                     cls._endpoints[endpoint_id] = cls._endpoint_cls(config)
         
         return cls._endpoints[endpoint_id]
-    
