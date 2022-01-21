@@ -31,6 +31,9 @@ class ESEndpointsFactory:
 
     @classmethod
     def init_endpoint_type(cls, endpoint_cls: Type[T_ESEndpoint] = ESEndpoint) -> None:
+        if not issubclass(endpoint_cls, ESEndpoint):
+            raise TypeError(f"Type {endpoint_cls.__name__} does not inherit {ESEndpoint.__name__}")
+
         cls._endpoint_cls = endpoint_cls
         cls._is_initialized = True
 
