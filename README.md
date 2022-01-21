@@ -66,3 +66,36 @@ es_client2 = ESEndpointsFactory.get_endpoint(config)
 
 print(es_client1 is es_client2)  # >>> True
 ```
+
+### The Config object
+There are several ways to create the config file:
+```python
+from es_endpoints_factory.config import Config
+
+config = Config.from_dict(
+        {
+            "user": "elastic_user",
+            "password": "elastic_password",
+            "host": "elastic_host",
+            "port": 9200,
+            "timeout": 60,
+            "use_ssl": True,
+            "es_cert_path": "path/to/certificate.cer",
+        }
+    )
+
+config = Config.from_args(
+            user="elastic_user",
+            password="elastic_password",
+            host="elastic_host",
+            port=9200,
+            timeout=60,
+            use_ssl=True,
+            es_cert_path="path/to/certificate.cer",
+    )
+    
+config = Config.from_json("path/to/config_file.json")
+
+config = Config.from_env()
+```
+
