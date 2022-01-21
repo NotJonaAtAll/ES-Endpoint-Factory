@@ -1,5 +1,5 @@
 # ES-Endpoint-Factory
-A Generic Elasticsearch endpoints factory to create, cache and maintain any number of connections simultaniously.
+A generic Elasticsearch endpoints factory to create, cache and maintain any number of connections simultaniously.
 
 ## Usage
 Create a config object:
