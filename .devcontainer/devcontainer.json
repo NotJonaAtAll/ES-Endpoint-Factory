@@ -4,9 +4,8 @@
 	// 	"dockerfile": "Dockerfile",
 	// 	"context": ".."
 	// },
-
 	// Set *default* container specific settings.json values on container create.
-	"settings": { 
+	"settings": {
 		"python.defaultInterpreterPath": "/usr/local/bin/python",
 		"python.linting.enabled": true,
 		"python.linting.pylintEnabled": true,
@@ -20,23 +19,23 @@
 		"python.linting.pydocstylePath": "/usr/local/py-utils/bin/pydocstyle",
 		"python.linting.pylintPath": "/usr/local/py-utils/bin/pylint"
 	},
-	
 	"containerEnv": {
 		"POETRY_VERSION": "${localEnv:POETRY_VERSION}",
 		"POETRY_VIRTUALENVS_CREATE": "false"
 	},
+	"runArgs": [
+		"--network=${localEnv:LOCAL_ELASTIC_NETWORK}"
+	],
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
 		"ms-python.python",
 		"ms-python.vscode-pylance"
 	],
-
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
-
+	
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": "./.devcontainer/postCreateCommand.sh",
-
 	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "vscode"
 }
